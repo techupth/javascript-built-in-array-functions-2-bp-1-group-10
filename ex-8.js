@@ -1,3 +1,5 @@
+// Exercise #8 (Challenge) : Locations
+
 const bills = [
     {
         id: "1",
@@ -375,4 +377,20 @@ const bills = [
 
 // Start coding here
 
-const totalPaidByLocation;
+function calculateTotalByLocation(bills) {
+    return bills.reduce((result, bill) => {
+        const location = bill.location;
+        const total = bill.total;
+
+        if (!result[location]) {
+            result[location] = total;
+        } else {
+            result[location] += total;
+        }
+
+        return result;
+    }, {});
+};
+
+const totalByLocation = calculateTotalByLocation(bills);
+console.log(totalByLocation);

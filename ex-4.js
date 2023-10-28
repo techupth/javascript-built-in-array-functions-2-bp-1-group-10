@@ -1,3 +1,5 @@
+// Exercise #4 : Bills Total Members
+
 const bills = [
   {
     id: "1",
@@ -374,4 +376,31 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+
+function getNewBills(bills) {
+  return bills.filter(bill => bill.member !== null);
+};
+
+const newBills = getNewBills(bills);
+console.log(newBills);
+
+
+function GetNewMembers(newBills) {
+  return newBills.map(newBills => newBills.member.name);
+};
+
+const billMembers = GetNewMembers(newBills);
+console.log(billMembers);
+
+
+function getTotalMembers(billMembers) {
+  return billMembers.reduce((acc, member) => {
+      if (!acc.includes(member)) {
+          acc.push(member);
+  }
+  return acc;
+}, []).length;
+};
+
+const totalMembers = getTotalMembers(billMembers);
+console.log("Unique Members Count: ", totalMembers);

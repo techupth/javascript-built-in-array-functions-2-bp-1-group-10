@@ -1,3 +1,5 @@
+// Exercise #3 : Bill Members
+
 const bills = [
   {
     id: "1",
@@ -374,4 +376,18 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+
+function getNewBills(bills) {
+  return bills.filter(bill => bill.member !== null);
+};
+
+const newBills = getNewBills(bills);
+console.log(newBills);
+
+
+function GetNewMembers(newBills) {
+  return newBills.map(newBills => newBills.member.name);
+};
+
+const billMembers = GetNewMembers(newBills);
+console.log(billMembers);

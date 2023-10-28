@@ -1,3 +1,5 @@
+// Exercise #2 : New Bills
+
 const bills = [
   {
     id: "1",
@@ -375,4 +377,9 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+function getNewBills(bills) {
+  return bills.filter(bill => bill.member !== null)
+};
+
+const newBills = getNewBills(bills);
+console.log(newBills);

@@ -1,3 +1,5 @@
+// Exercise #1 : Bills
+
 const bills = [
   {
     id: "1",
@@ -374,3 +376,9 @@ const bills = [
 ];
 
 // Start coding here
+function calculateTotalAmount(totalTransaction, bills) {
+  return totalTransaction + bills.total;
+};
+
+const totalAmount = bills.reduce(calculateTotalAmount, 0);
+console.log("Total bill transaction is", totalAmount);
